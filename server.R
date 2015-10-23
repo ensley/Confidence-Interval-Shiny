@@ -72,6 +72,9 @@ shinyServer(function(input, output, session) {
       layer_rects(~l, ~x-as.numeric(input$N)/2000, x2 = ~u, y2 = ~x+as.numeric(input$N)/2000, stroke = ~as.factor(c)) %>%
       layer_points(size.hover := 200, fillOpacity := 0.8, fillOpacity.hover := 0.6) %>%
       add_tooltip(data_tooltip, 'hover') %>%
+      add_legend('stroke', title="Mean outside interval?") %>%
+      add_axis('y', title='Sample #') %>%
+      add_axis('x', title='x') %>%
       set_options(height = 550, keep_aspect = T)
     
   })
@@ -79,7 +82,7 @@ shinyServer(function(input, output, session) {
   vis %>% bind_shiny('plot')
   
   output$count <- renderText({
-    paste0(round(as.numeric(count$c)/as.numeric(input$N)*100,2),'% (',count$c,' out of ', input$N, ') confidence intervals do not include the true mean. \nAt a confidence level of ', inputAlpha(), ', we would expect this to be about ', round((1-inputAlpha())*100), '%.')
+    paste0(round(as.numeric(count$c)/as.numeric(input$N)*100,2),'% (',count$c,' out of ', input$N, ') of the confidence intervals do not include the true mean. \nAt a confidence level of ', inputAlpha(), ', we would expect this to be about ', round((1-inputAlpha())*100), '%.')
   })
   
 })
