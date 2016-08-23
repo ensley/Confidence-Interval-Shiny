@@ -27,7 +27,7 @@ shinyUI(navbarPage('Confidence Intervals on Means',
   
   # tweet button stuff
   tags$script(HTML("var header = $('.navbar > .container');
-                       header.append('<div style=\"padding-top:10px;float:right\"><a href=\"https://twitter.com/share\" class=\"twitter-share-button\" align=\"middle\" data-url=\"www.mywebsite.com\" data-text=\"I just learned something about statistics from www.mywebsite.com!\" data-size=\"large\">Tweet</a></div>');
+                       header.append('<div style=\"padding-top:10px;float:right\"><a href=\"https://twitter.com/share\" class=\"twitter-share-button\" align=\"middle\" data-url=\"www.mywebsite.com\" data-text=\"I just learned something about Confidence Intervals from Penn State Shiney!\" data-size=\"large\">Tweet</a></div>');
                        console.log(header)")),
   tags$script(HTML("!function(d,s,id){
             var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';

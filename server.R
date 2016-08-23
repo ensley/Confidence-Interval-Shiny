@@ -1,3 +1,6 @@
+# install.packages("shiny")
+# install.packages("ggvis")
+# install.packages("dplyr")
 library(shiny)
 library(ggvis)
 library(dplyr)
